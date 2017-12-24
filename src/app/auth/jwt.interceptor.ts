@@ -10,12 +10,14 @@ export class JwtInterceptor implements HttpInterceptor {
         return next.handle(request).do((event: HttpEvent<any>) => {
             if (event instanceof HttpResponse) {
                 // do stuff with response if you want
+                console.log('looix');
             }
         }, (err: any) => {
             if (err instanceof HttpErrorResponse) {
                 if (err.status === 401) {
                     // redirect to the login route
                     // or show a modal
+                    console.log('looix 2');
                 }
             }
         });

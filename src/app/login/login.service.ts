@@ -12,18 +12,16 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   getLogin(user): Observable<any> {
-    return this.http.post(environment.rootURL + this.loginAPI, user).map((res: Response) => {
-      const data = res.json();
-      return data;
+    return this.http.post(this.loginAPI, user).map((res: Response) => {
+      return res;
     }).catch((res: Response) => {
-      const data = res.json();
+      const data = res;
       return Observable.throw(data);
     });
   }
   logOut() {
-    return this.http.get(environment.rootURL + this.logOutAPI).map((res: Response) => {
+    return this.http.get(this.logOutAPI).map((res: Response) => {
       const data = res.json();
-
       return data;
     }).catch((res: Response) => {
       const data = res.json();

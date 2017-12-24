@@ -1,0 +1,7 @@
+{
+    "/rest/*": {
+      "target": "http://prd-mdl-as-04.fx.lan:8081/",
+      "secure": false,
+      "logLevel": "debug"
+    }
+  }

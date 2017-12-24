@@ -3,13 +3,13 @@ import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login.component';
 import { LoginService } from './login.service';
 import { FormsModule } from '@angular/forms';
-import { ShareLibModule } from '../shared/shared-lib.module';
 import { AuthService } from '../auth/auth.service';
+import { ShareModule } from '../shared/shared.module';
 
 @NgModule({
     imports: [
         FormsModule,
-        ShareLibModule,
+        ShareModule,
         RouterModule
     ],
     declarations: [
