@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+/* Import main Inspinia style */
+@import "assets/styles/style";
+.required {
+    text-align: left;
+     color:red; 
+     margin-bottom: 5px;
+      margin-left: 10px;
+}
+.form-group{
+    margin-bottom: 5px ;
+}
+.invalid-feedback{
+    display: block
+}

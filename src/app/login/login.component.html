@@ -1,0 +1,46 @@
+<h1 style="text-align: CENTER; margin-top: 7%;" >API MANAGER</h1>
+<div class="middle-box text-center loginscreen  animated fadeInDown" style="margin: 0px auto">
+    <div>
+        <div>
+ 
+        </div>
+        <form class="m-t" role="form" #loginForm="ngForm">
+            <div class="form-group">
+                <input type="email" minlength="6" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="username" #username="ngModel" [(ngModel)]="user.username" class="form-control" placeholder="Username" required>
+            </div>
+            <div *ngIf="username.invalid && (username.dirty || username.touched)" class="invalid-feedback required">
+                <div *ngIf="username.errors.required">
+                   * User name is required.
+                </div>
+                <div *ngIf="username.errors.minlength">
+                  * User name must be at least 6 characters long.
+                </div>
+                <div *ngIf="username.errors.pattern">
+                   * Email must contain at least the @ character
+                  </div>
+            </div>
+            <div class="form-group">
+                <input type="password" minlength="8" #password="ngModel" name="password" class="form-control" [(ngModel)]="user.password" placeholder="Password" required>
+            </div>
+            <div style="text-align: left" *ngIf="password.invalid && (password.dirty || password.touched)" class="invalid-feedback required">
+                <div *ngIf="password.errors.required">
+                    * Password is required.
+                </div>
+                <div *ngIf="password.errors.minlength">
+                    * Password must be at least 8 characters long.
+                    </div>
+            </div>
+            <button type="submit" [disabled]="!loginForm.form.valid"  (click)="login()" class="btn btn-primary block full-width m-b">Login</button>
+
+            <a href="#">
+                <small>Forgot password?</small>
+            </a>
+            <p class="text-muted text-center">
+                <small>Do not have an account?</small>
+            </p>
+        </form>
+        <p class="m-t">
+            <small>Inspinia we app framework base on Bootstrap 3 &copy; 2014</small>
+        </p>
+    </div>
+</div>

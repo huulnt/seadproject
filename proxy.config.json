@@ -1,0 +1,10 @@
+ {
+  "/rest/api/*": {
+    "target": "http://prd-mdl-as-04.fx.lan:8081/",
+    "secure": false,
+    "pathRewrite": {
+      "^/rest/api": "http://prd-mdl-as-04.fx.lan:8081/rest/api/"
+    },
+    "changeOrigin": true
+  }
+}
