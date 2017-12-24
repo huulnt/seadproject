@@ -1,10 +1,10 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DialogComponent } from './dialog.component';
 import { JhiEventManager } from 'ng-jhipster';
 import { Subscription } from 'rxjs/Rx';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Injectable()
 export class DialogService implements OnDestroy {
@@ -23,15 +23,8 @@ export class DialogService implements OnDestroy {
         /**
          * Only show dialog one time
          */
-        const dialog = document.getElementsByClassName('alert-dialog');
-        if (dialog.length > 0) {
-            return;
-        }
 
         const modalRef = this.modalService.open(DialogComponent, {
-            windowClass: 'alert-dialog d-flex align-items-center justify-content-center'
-                + (type === 'picture' ? ' fullscreen' : ''),
-            backdrop: 'static'
         });
         modalRef.componentInstance.title = (params && params.title) ? params.title : '';
         modalRef.componentInstance.message = (params && params.message) ? params.message : '';
